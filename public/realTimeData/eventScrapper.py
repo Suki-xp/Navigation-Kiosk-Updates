@@ -28,19 +28,26 @@ def scrapperEvents():
     
     for locateInfo in content:
         #Locate the date, time, location, and general description for the all events
-        #happening across campus
+        #happening across campus along with the tag seperate
         all_events_info = locateInfo.find('h3', class_='media-heading header-cg--h4')
         
-        #Finds the general information of all the events 
+        #Finds the general information of all the events and tag
         description = all_events_info.find('a')
-        event_format = description['aria-description']
+        event_format = description.get('aria-description', '')
         
+        event_tag_classified = locateInfo.find('p', class_='rsvp__event-tags')
+        #In case there are no tags left
+        if event_tag_classified:
+            event_tag = [a.get_text(strip=True) for a in event_tag_classified.find_all('a')]
+        else:
+            event_tag = []
+            
         #Any error check to skip any non important elements
         event_parts = event_format.split(', ')
         if len(event_parts) < 3:
             continue
         
-        #Find the event name and the day/date as well
+        #Find the event name and the day/date and the tag
         event_name = description.get_text(strip=True)
         event_day = event_format.split(', ')[0].split('. ')[-1]
         event_date = event_format.split(', ')[1].split(' At ')[0]
@@ -57,7 +64,8 @@ def scrapperEvents():
             "Name": event_name, 
             "Day": event_day,
             "Date": event_date,
-            "Time": event_time
+            "Time": event_time,
+            "Tag": event_tag
         }
         events_data.append(extracted_event_info)
     

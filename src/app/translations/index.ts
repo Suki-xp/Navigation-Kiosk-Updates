@@ -21,7 +21,7 @@ export interface Translations {
   // Events tab
   campusEvents: string;
   thisMonth: string;
-  academic: string;
+  sessions: string;
   sports: string;
   arts: string;
   career: string;
@@ -76,7 +76,7 @@ export const translations: Record<Language, Translations> = {
     noAlertsMatch: "No alerts match your filter.",
     campusEvents: "CAMPUS EVENTS",
     thisMonth: "THIS MONTH",
-    academic: "Academic",
+    sessions: "Sessions",
     sports: "Sports",
     arts: "Arts",
     career: "Career",

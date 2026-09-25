@@ -1,176 +1,278 @@
 [
    {
-      "Name": "Campus Kitchen Volunteer Fall Cohort Recruitment",
-      "Day": "Thursday",
-      "Date": "13 August 2026",
-      "Time": "1:00 PM"
-   },
-   {
       "Name": "Alt Break Participant Recruitment",
       "Day": "Thursday",
       "Date": "27 August 2026",
-      "Time": "1:00 PM"
+      "Time": "1:00 PM",
+      "Tag": [
+         "Travel Opportunity",
+         "Advocacy"
+      ]
    },
    {
       "Name": "On Campus Service: Old Growth Forest",
       "Day": "Thursday",
       "Date": "27 August 2026",
-      "Time": "1:00 PM"
+      "Time": "1:00 PM",
+      "Tag": [
+         "Educational/Awareness"
+      ]
    },
    {
       "Name": "Corner 24' September & October Special: Philly Cheese Steak",
       "Day": "Tuesday",
       "Date": "01 September 2026",
-      "Time": "7:00 AM"
+      "Time": "7:00 AM",
+      "Tag": [
+         "Meal-based Event"
+      ]
    },
    {
       "Name": "Ducky's September Special: Triple Berry Lemonade",
       "Day": "Tuesday",
       "Date": "01 September 2026",
-      "Time": "8:30 AM"
+      "Time": "8:30 AM",
+      "Tag": [
+         "Meal-based Event"
+      ]
    },
    {
       "Name": "Burger 37' September Specials: Teriyaki Chicken Sandwich, Poutine, and Pineapple Shake",
       "Day": "Burger 37\u2019 September Specials: Teriyaki Chicken Sandwich",
       "Date": "Poutine",
-      "Time": "10:30 AM"
-   },
-   {
-      "Name": "R.A.D. for Women (Basic Self Defense Course)",
-      "Day": "Wednesday",
-      "Date": "02 September 2026",
-      "Time": "6:00 PM"
-   },
-   {
-      "Name": "Run Club with CCVT",
-      "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "7:30 AM"
-   },
-   {
-      "Name": "Men's Bible Study with CCVT",
-      "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "9:00 AM"
-   },
-   {
-      "Name": "ASEE Cafe",
-      "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "9:00 AM"
+      "Time": "10:30 AM",
+      "Tag": [
+         "Meal-based Event"
+      ]
    },
    {
       "Name": "Latin Heritage Fridays at Owens Food Court",
       "Day": "Friday",
       "Date": "18 September 2026",
-      "Time": "10:00 AM"
+      "Time": "10:00 AM",
+      "Tag": [
+         "Meal-based Event"
+      ]
+   },
+   {
+      "Name": "Three Day Prayer",
+      "Day": "Thursday",
+      "Date": "24 September 2026",
+      "Time": "8:00 AM",
+      "Tag": [
+         "Religious or Spiritual Observance"
+      ]
+   },
+   {
+      "Name": "1st Fajr Breakfast Club",
+      "Day": "Friday",
+      "Date": "25 September 2026",
+      "Time": "6:00 AM",
+      "Tag": [
+         "Social"
+      ]
+   },
+   {
+      "Name": "Recovery Month: Coffee Bike",
+      "Day": "Friday",
+      "Date": "25 September 2026",
+      "Time": "8:30 AM",
+      "Tag": [
+         "Outreach and Tabling",
+         "Recovery Community"
+      ]
+   },
+   {
+      "Name": "Men's Bible Study with CCVT",
+      "Day": "Friday",
+      "Date": "25 September 2026",
+      "Time": "9:00 AM",
+      "Tag": [
+         "Religious or Spiritual Observance"
+      ]
+   },
+   {
+      "Name": "Student Advocacy Summit",
+      "Day": "Friday",
+      "Date": "25 September 2026",
+      "Time": "9:45 AM",
+      "Tag": [
+         "Educational/Awareness",
+         "Advocacy"
+      ]
    },
    {
       "Name": "Twenty-First Birthday Project",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "10:00 AM"
-   },
-   {
-      "Name": "Org Re-Registration Make Up",
-      "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "10:00 AM"
+      "Date": "25 September 2026",
+      "Time": "10:00 AM",
+      "Tag": [
+         "Individual Consultations",
+         "21st Birthday"
+      ]
    },
    {
       "Name": "Early Bird Discount in Breakzone",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "10:00 AM"
+      "Date": "25 September 2026",
+      "Time": "10:00 AM",
+      "Tag": [
+         "Social",
+         "Breakzone"
+      ]
    },
    {
-      "Name": "Exploring Emotions Tabling",
+      "Name": "Community Resiliency Model Tabling  (COPY)",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "11:00 AM"
+      "Date": "25 September 2026",
+      "Time": "11:00 AM",
+      "Tag": [
+         "Outreach and Tabling",
+         "Mental Health Initiatives",
+         "Community Resilience Model"
+      ]
    },
    {
       "Name": "Pancakes with CCVT",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "11:00 AM"
+      "Date": "25 September 2026",
+      "Time": "11:00 AM",
+      "Tag": [
+         "Social"
+      ]
    },
    {
-      "Name": "Pop Up Acrylic Painting",
+      "Name": "LAIGSA Fall 2026 Lunch Series \u2013 Lunch #3",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "11:00 AM"
+      "Date": "25 September 2026",
+      "Time": "12:00 PM",
+      "Tag": [
+         "Social",
+         "Graduate Student Events"
+      ]
    },
    {
-      "Name": "Founders Roundtable: Connect, Collaborate & Share",
-      "Day": "Founders Roundtable: Connect",
-      "Date": "Collaborate and Share. Friday",
-      "Time": "12:00 PM"
-   },
-   {
-      "Name": "Come Hang & Get Trained - Recovery Month",
+      "Name": "Venture Builders Workshop(Jobs Process & Buying Ecosystem)",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "1:00 PM"
+      "Date": "25 September 2026",
+      "Time": "12:00 PM",
+      "Tag": [
+         "Social",
+         "Entrepreneurship",
+         "Apex Center for Entrepreneurship"
+      ]
    },
    {
-      "Name": "Org Re-Registration Make Up",
+      "Name": "September GBM: Science Communication",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "1:00 PM"
+      "Date": "25 September 2026",
+      "Time": "12:00 PM, (GMT-3). Private Location ( sign in to display ) . Opens the event page",
+      "Tag": [
+         "Academic"
+      ]
    },
    {
-      "Name": "Phone Free Fridays in the Breakzone",
+      "Name": "Hack-n-Yak (Weekly social)",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "2:00 PM"
+      "Date": "25 September 2026",
+      "Time": "2:00 PM",
+      "Tag": [
+         "Social"
+      ]
    },
    {
-      "Name": "Tea at Two",
+      "Name": "Leaf Pattern Decor",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "2:00 PM"
+      "Date": "25 September 2026",
+      "Time": "3:00 PM",
+      "Tag": [
+         "Arts & Crafting",
+         "Graduate Student Events"
+      ]
    },
    {
-      "Name": "Pickleball Friday",
+      "Name": "Pop Up StarZ",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "3:00 PM"
+      "Date": "25 September 2026",
+      "Time": "4:00 PM",
+      "Tag": [
+         "Arts & Crafting",
+         "Arts"
+      ]
    },
    {
       "Name": "RCWAJ Hawthorne House Council Meetings",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "4:00 PM"
+      "Date": "25 September 2026",
+      "Time": "4:00 PM",
+      "Tag": [
+         "Closed Meeting"
+      ]
    },
    {
-      "Name": "La Gran Bienvenida 2026",
-      "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "4:00 PM"
+      "Name": "Recovery Month: FREE Group Yoga Class!",
+      "Day": "Recovery Month: FREE Group Yoga Class! Friday",
+      "Date": "25 September 2026",
+      "Time": "4:30 PM",
+      "Tag": [
+         "Educational/Awareness",
+         "Recovery Community"
+      ]
    },
    {
-      "Name": "International Cafe Hours featuring the taste of Saudi Arabian culture",
-      "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "4:00 PM"
+      "Name": "Red Flag, Green Flag, Friends Edition",
+      "Day": "Red Flag",
+      "Date": "Green Flag",
+      "Time": "4:30 PM",
+      "Tag": [
+         "Social"
+      ]
    },
    {
-      "Name": "Hermandad de SIA - 1st Fall Open Informational",
+      "Name": "OCA Day",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "4:10 PM"
+      "Date": "25 September 2026",
+      "Time": "4:30 PM",
+      "Tag": [
+         "Educational/Awareness"
+      ]
+   },
+   {
+      "Name": "Open Discussion with Virginia Tech Police",
+      "Day": "Friday",
+      "Date": "25 September 2026",
+      "Time": "5:00 PM",
+      "Tag": [
+         "Open Meeting",
+         "Advocacy"
+      ]
    },
    {
       "Name": "Weekly Board Game Club Meeting",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "5:00 PM"
+      "Date": "25 September 2026",
+      "Time": "5:00 PM",
+      "Tag": [
+         "Open Meeting"
+      ]
    },
    {
-      "Name": "Open Discussion",
+      "Name": "Bio Department Fall Picnic",
       "Day": "Friday",
-      "Date": "18 September 2026",
-      "Time": "5:00 PM"
+      "Date": "25 September 2026",
+      "Time": "5:00 PM",
+      "Tag": [
+         "Social"
+      ]
+   },
+   {
+      "Name": "Buddy Swap",
+      "Day": "Friday",
+      "Date": "25 September 2026",
+      "Time": "5:00 PM",
+      "Tag": [
+         "Social",
+         "Graduate Student Events"
+      ]
    }
 ]

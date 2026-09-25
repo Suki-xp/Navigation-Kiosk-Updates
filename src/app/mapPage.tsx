@@ -8,9 +8,11 @@ import type { Language } from "./translations";
 
 //The interface of the events here
 interface Event {
-  Title: string,
+  Name: string,
+  Day: string,
   Date: string,
-  Location: string,
+  Time: string,
+  Tag: string[];
 }
 
 //Imports for json requests to use within react server for
@@ -25,18 +27,16 @@ import logoPlus from './components/assets/plus.webp';
 
 //Now we are going to import the different images specifically for the type of
 //events, allowing users to gauge the idea of what type of vibe it represents
-import logoAcademic from "./components/assets/academicEvents.jpg";
 import logoSports from "./components/assets/sportsEvents.png";
-import logoCareer from "./components/assets/careerEvents.jpg";
+import logoSessions from "./components/assets/careerEvents.jpg";
 import logoSocial from "./components/assets/socialEvents.jpg";
 import logoArts from "./components/assets/artsEvents.jpg";
 import logoGeneral from "./components/assets/generalEvents.jpeg";
 
 const allEvents: { [key: string]: StaticImageData | string } =
 {
-  "Academics": logoAcademic,
   "Sports": logoSports,
-  "Career": logoCareer,
+  "Sessions": logoSessions,
   'Social': logoSocial,
   'Arts': logoArts,
   'General': logoGeneral,
@@ -78,7 +78,7 @@ const allEvents: { [key: string]: StaticImageData | string } =
     }
   }
 
-// Language option display labels
+//Language option display labels
 const languageOptions: { code: Language; label: string }[] = [
   { code: "en", label: "EN" },
   { code: "es", label: "ES" },
@@ -105,9 +105,9 @@ export default function MapPage() {
   const [rawUpdates, setRawUpdates] = useState<Closures[]>([]);
 
   //Now its the filtering for the events to display on the page
-  const [eventFilter, setEventFilter] = useState<"all" | "Academics" | "Sports" | "Arts" | "Career" | "Social" | "General">("all");
+  const [eventFilter, setEventFilter] = useState<"all" | "Sports" | "Arts" | "Sessions" | "Social" | "General">("all");
 
-  // Ref for closing the lang dropdown when clicking outside
+  //Ref for closing the lang dropdown when clicking outside
   const langDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -196,6 +196,14 @@ export default function MapPage() {
     return "General";
   }
 
+  //Method to format the event time
+  const formatEventTime = (timeStr: string): string => 
+  {
+    if (!timeStr) return "Time N/A";
+      const match = timeStr.match(/(\d{1,2}:\d{2}\s*(?:AM|PM))/i);
+    return match ? match[1] : timeStr;
+  };
+
   //Now we need to sort again by the urgency of the alert
   const getUrgency = (urgencyName: string, comments: string): "critical" | "warning" | "info" =>
   {
@@ -215,39 +223,39 @@ export default function MapPage() {
   }
 
   //Same sort of key word association for the events
-  const getEvents = (event: Event): "Academics" | "Sports" | "Arts"
-  | "Career" | "Social" | "General" =>
+  const getEvents = (event: Event): "Sports" | "Arts"
+  | "Sessions" | "Social" | "General" =>
   {
-    const eventReading = (event.Title + " " + event.Location).toLowerCase();
+    const tagsCombined = Array.isArray(event.Tag) ? event.Tag.join(" ") : "";
+    const eventReading = (tagsCombined + " " + (event.Name || ""));
     //Now its the same key word association that will sort events
-    if (eventReading.includes("academic") || eventReading.includes("tutoring")
-      || eventReading.includes("pathways") || eventReading.includes("study"))
-    {
-      return "Academics";
-    }
 
-    if (eventReading.includes("sports") || eventReading.includes("live") ||
-      eventReading.includes("classic"))
+    if (eventReading.includes("Sports") || eventReading.includes("Live") ||
+      eventReading.includes("Athletic") || eventReading.includes("Training"))
     {
       return "Sports";
     }
 
-    if (eventReading.includes("art") || eventReading.includes("artists")
-       || eventReading.includes("music") || eventReading.includes("performance")
-       || eventReading.includes("dance") || eventReading.includes("rhythm"))
+    if (eventReading.includes("Art") || eventReading.includes("Artists")
+       || eventReading.includes("Music") || eventReading.includes("Performance")
+       || eventReading.includes("Dance") || eventReading.includes("Rhythm")
+       || eventReading.includes("Arts & Crafting") || eventReading.includes("Gallary"))
     {
       return "Arts";
     }
 
-    if (eventReading.includes("social") || eventReading.includes("halloween") ||
-        eventReading.includes("feast") || eventReading.includes("trivia"))
+    if (eventReading.includes("Social") || eventReading.includes("Special") ||
+        eventReading.includes("Specials") || eventReading.includes("Cafe") || 
+        eventReading.includes("Birthday") || eventReading.includes("Food") || 
+        eventReading.includes("Day"))
     {
         return "Social";
     }
 
-    if (eventReading.includes("career") || eventReading.includes("job") || eventReading.includes("fair"))
+    if (eventReading.includes("Career") || eventReading.includes("Job") 
+        || eventReading.includes("Fair") || eventReading.includes("Jobs"))
     {
-      return "Career";
+      return "Sessions";
     }
     return "General";
   }
@@ -309,40 +317,10 @@ export default function MapPage() {
     })
     .sort ((e, f) => {
       //Now we sort by the day, date, and time of the locations
-      const parseData = (dataStr: string) => {
-        const matching = dataStr.match(/(\w+),\s+(\w+)\s+(\d+)\s+at\s+(\d+):(\d+)(AM|PM)\s+EST/);
+      const dateE = new Date(`${e.Date} ${formatEventTime(e.Time)}`).getTime() || 0;
+      const dateF = new Date(`${f.Date} ${formatEventTime(f.Time)}`).getTime() || 0;
 
-        if (!matching)
-        {
-          return new Date();
-        }
-
-        //Otherwise we create a new array that holds the specific info that we can pass through
-        //and the format within for all the events to return the proper date format for the event
-        const [, , month, numberOfDays, hour, minute, period] = matching;
-        //Dictionary to hold the months
-        const months: {[key: string]: number } = {
-          January: 0, February: 1, March: 2, April: 3, May: 4, June: 5, July: 6, August: 7,
-          September: 8, October: 9, November: 10, December: 11
-        };
-
-        //Then we parse the hour
-        let x = parseInt(hour);
-
-        if (period == "PM" && x !== 12)
-        {
-          x += 12;
-        }
-
-        if (period == "AM" && x === 12)
-        {
-          x = 0;
-        }
-
-        return new Date(2025, months[month], parseInt(numberOfDays), x, parseInt(minute))
-      }
-      // Sorts from newest to oldest
-      return parseData(f.Date).getTime() - parseData(e.Date).getTime();
+      return dateF - dateE;
     })
 
   //We create another helper methods for buttons and style
@@ -369,17 +347,6 @@ export default function MapPage() {
     }
     return buttonFormat;
   };
-
-  //Helper function to parse Date string into Date/Time for cards
-  const formatEventDate = (dateStr: string): { date: string, time: string } => {
-    const match = dateStr.match(/(\w+,\s+\w+\s+\d+)\s+at\s+(.+EST)/);
-    if (match) {
-
-        return { date: match[1], time: match[2].replace(" EST", "") };
-    }
-    return { date: dateStr, time: "Time N/A" }; // Fallback
-  };
-
 
   const getMenuStyle = (tab: string): React.CSSProperties =>
   {
@@ -476,7 +443,7 @@ export default function MapPage() {
                     const timeAgo = gettingTime(c.details["Closure Start Date"]);
 
                     return (
-                      <div key={c.id} className="bg-white p-4 rounded-x1 shadow-sm border border-gray-200">
+                      <div key={c.id} className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
                         <div className="flex items-start gap-3">
                           <span className="text-2xl">{warningIcons[urgency]}</span>
                           <div className="flex-1">
@@ -529,10 +496,9 @@ export default function MapPage() {
             {/* Filter Buttons */}
             <div className="flex gap-2 mb-6 flex-wrap">
               <button onClick={() => setEventFilter("all")} className={getEventButtonStyle("all")}>{t.all}</button>
-              <button onClick={() => setEventFilter("Academics")} className={getEventButtonStyle("Academics")}>{t.academic}</button>
               <button onClick={() => setEventFilter("Sports")} className={getEventButtonStyle("Sports")}>{t.sports}</button>
               <button onClick={() => setEventFilter("Arts")} className={getEventButtonStyle("Arts")}>{t.arts}</button>
-              <button onClick={() => setEventFilter("Career")} className={getEventButtonStyle("Career")}>{t.career}</button>
+              <button onClick={() => setEventFilter("Sessions")} className={getEventButtonStyle("Sessions")}>{t.sessions}</button>
               <button onClick={() => setEventFilter("Social")} className={getEventButtonStyle("Social")}>{t.social}</button>
             </div>
 
@@ -542,46 +508,46 @@ export default function MapPage() {
                 <p className="text-center text-gray-500 md:col-span-2 py-8">{t.noEventsMatch}</p>
               )}
               {filteredEvents.map((event, index) => {
-                const { date, time } = formatEventDate(event.Date);
                 const tag = getEvents(event);
+                const displayTime = formatEventTime(event.Time);
 
                 //Getting the tag for the rest of the images to update on the dispalay
                 const totalImages = allEvents[tag] || allEvents["General"]
                 return (
-                  <div key={index} className="bg-white rounded-x1 shadow-md overflow-hidden flex flex-col">
+                  <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
                     {/* Image Placeholder */}
                     <div className="h-40 bg-gray-200 relative">
                       <Image
                           src = {totalImages}
-                          alt = {event.Title}
+                          alt = {event.Name}
                           fill //So it fits the container
                           className = "object-cover transititon-transform hover:scale-105"
                           sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       {/* Tag */}
                       <span className="absolute top-3 left-3 bg-white/90 text-gray-800 text-xs font-semibold px-2 py-1 rounded">
-                        {tag}
+                        {event.Tag && event.Tag.length > 0 ? event.Tag[0] : tag}
                       </span>
                     </div>
 
                     {/* Card Content */}
                     <div className="p-4 flex-1">
-                      <h3 className="font-bold text-lg text-gray-900 mb-3">{event.Title}</h3>
+                      <h3 className="font-bold text-lg text-gray-900 mb-3">{event.Name}</h3>
                       <div className="space-y-2 text-sm text-gray-700">
                       {/* Date */}
                         <div className="flex items-center gap-2">
                           <span className="text-lg w-5 text-center">{eventIcons.calender}</span>
-                          <span>{date}</span>
+                          <span>{event.Date}</span>
                         </div>
                       {/* Time */}
                         <div className="flex items-center gap-2">
                           <span className="text-lg w-5 text-center">{eventIcons.time}</span>
-                          <span>{time}</span>
+                          <span>{displayTime}</span>
                         </div>
                       {/* Location */}
                         <div className="flex items-center gap-2">
                           <span className="text-lg w-5 text-center">{eventIcons.location}</span>
-                          <span>{event.Location}</span>
+                          <span>(need to sign in with VT account)</span>
                         </div>
                       </div>
                     </div>
@@ -660,7 +626,7 @@ export default function MapPage() {
           <nav className="flex-1 p-4 space-y-1">
             <button
               onClick={() => { setActiveTab("map"); setIsMenuOpen(false); }}
-              className="w-full flex items-center gap-3 p-3 rounded-x1 transition hover:bg-white/10"
+              className="w-full flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10"
               style={getMenuStyle("map")}
             >
               <Image src={logoMap} width={20} height={20} alt="" />
@@ -669,7 +635,7 @@ export default function MapPage() {
 
             <button
               onClick={() => { setActiveTab("events"); setIsMenuOpen(false); }}
-              className="w-full flex items-center gap-3 p-3 rounded-x1 transition hover:bg-white/10"
+              className="w-full flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10"
               style={getMenuStyle("events")}
             >
               <Image src={logoCal} width={20} height={20} alt="" />
@@ -678,7 +644,7 @@ export default function MapPage() {
 
             <button
               onClick={() => { setActiveTab("alerts"); setIsMenuOpen(false); }}
-              className="w-full flex items-center gap-3 p-3 rounded-x1 transition hover:bg-white/10"
+              className="w-full flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10"
               style={getMenuStyle("alerts")}
             >
               <Image src={logoAlert} width={20} height={20} alt="" />
@@ -687,7 +653,7 @@ export default function MapPage() {
 
             <button
               onClick={() => { setActiveTab("preferences"); setIsMenuOpen(false); }}
-              className="w-full flex items-center gap-3 p-3 rounded-x1 transition hover:bg-white/10"
+              className="w-full flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10"
               style={getMenuStyle("preferences")}
             >
               <Image src={logoGear} width={20} height={20} alt="" />
