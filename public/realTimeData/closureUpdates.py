@@ -71,7 +71,6 @@ def running():
                     }
                 }
                 closures.append(closure_data)
-                print(f"Successfully scraped all the closure_data")
     
         except requests.exceptions.RequestException as e:
             print(f"Scrapping couldn;t be done due to {layer_info['id']}: {e}")

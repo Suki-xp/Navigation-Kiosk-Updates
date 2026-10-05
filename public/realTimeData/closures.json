@@ -716,200 +716,58 @@
         },
         "details": {
             "Closure Start Date": "2026-06-08 08:00:00",
-            "Closure End Date": "2026-09-26 17:00:00",
+            "Closure End Date": "2026-10-30 17:00:00",
             "COMMENTS": "The general contractor will begin to mobilize for Phase 1 of construction on a universal and multimodal pathway through the Residential District to achieve an accessible route between East Eggleston and Deitrick Halls. ",
             "More Information": null
         }
     },
     {
-        "id": 20362,
-        "name": "War Memorial Gym Sidewalk",
+        "id": 20195,
+        "name": "Fleet Services ADA Parking and Pathway",
         "type": "Current",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
                 [
                     [
-                        -80.42080777363893,
-                        37.22584998560747
+                        -80.4140973810447,
+                        37.218923027974654
                     ],
                     [
-                        -80.42075864108648,
-                        37.225887378938545
+                        -80.4141484817301,
+                        37.21904863450115
                     ],
                     [
-                        -80.4206077573878,
-                        37.225759096933324
+                        -80.41431220201811,
+                        37.21900418140837
                     ],
                     [
-                        -80.42054512941631,
-                        37.225731519192784
+                        -80.41433442374803,
+                        37.2190501314939
                     ],
                     [
-                        -80.42059084833188,
-                        37.225700604022734
+                        -80.41410912892053,
+                        37.21912050723044
                     ],
                     [
-                        -80.42088586813709,
-                        37.225742815126466
+                        -80.41406444449927,
+                        37.21903376080051
                     ],
                     [
-                        -80.42092660519798,
-                        37.22579196960501
+                        -80.41402709742836,
+                        37.21894526134434
                     ],
                     [
-                        -80.42080777363893,
-                        37.22584998560747
+                        -80.4140973810447,
+                        37.218923027974654
                     ]
                 ]
             ]
         },
         "details": {
-            "Closure Start Date": "2026-08-17 06:00:00",
-            "Closure End Date": "2026-09-18 18:00:00",
-            "COMMENTS": "This sidewalk closure does impact an ADA route into the gym, so please seek alternate routes",
-            "More Information": null
-        }
-    },
-    {
-        "id": 20194,
-        "name": "Inn Facade Repairs",
-        "type": "Current",
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-                [
-                    [
-                        -80.42989881397303,
-                        37.22905260967616
-                    ],
-                    [
-                        -80.43019873563466,
-                        37.22952437800125
-                    ],
-                    [
-                        -80.43053248607289,
-                        37.22952112653252
-                    ],
-                    [
-                        -80.43074337625761,
-                        37.22956841777996
-                    ],
-                    [
-                        -80.43135472644481,
-                        37.229847417695744
-                    ],
-                    [
-                        -80.43167477597747,
-                        37.23027899207215
-                    ],
-                    [
-                        -80.43156671310302,
-                        37.230260905092074
-                    ],
-                    [
-                        -80.43130644066592,
-                        37.2299011544607
-                    ],
-                    [
-                        -80.4307169790647,
-                        37.22961932587081
-                    ],
-                    [
-                        -80.43053692653216,
-                        37.22958399138111
-                    ],
-                    [
-                        -80.43022356402302,
-                        37.229589069855784
-                    ],
-                    [
-                        -80.4298357182825,
-                        37.2297287487105
-                    ],
-                    [
-                        -80.42949987601857,
-                        37.2292229303653
-                    ],
-                    [
-                        -80.42989881397303,
-                        37.22905260967616
-                    ]
-                ]
-            ]
-        },
-        "details": {
-            "Closure Start Date": "2025-12-01 09:00:00",
-            "Closure End Date": "2026-10-01 15:00:00",
-            "COMMENTS": "Courtyard area will be closed. Courtyard exterior exit doors may be re-routed during the construction process. Occupants may experience typical construction-related noise and dust associated with the work. Work will occur 9:00 a.m. to 3:00 M-F.",
-            "More Information": null
-        }
-    },
-    {
-        "id": 20251,
-        "name": "Smith Career Center Facade Repair",
-        "type": "Current",
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-                [
-                    [
-                        -80.42277325171055,
-                        37.2217027714629
-                    ],
-                    [
-                        -80.42282027238691,
-                        37.22167548434541
-                    ],
-                    [
-                        -80.42282380212747,
-                        37.221679374458674
-                    ],
-                    [
-                        -80.42289532734404,
-                        37.221637877765076
-                    ],
-                    [
-                        -80.42298041891581,
-                        37.221732792564914
-                    ],
-                    [
-                        -80.42285976530253,
-                        37.22180068698372
-                    ],
-                    [
-                        -80.42277325171055,
-                        37.2217027714629
-                    ]
-                ],
-                [
-                    [
-                        -80.42270213546932,
-                        37.22301864706143
-                    ],
-                    [
-                        -80.42273953659388,
-                        37.22300852748557
-                    ],
-                    [
-                        -80.422766067413,
-                        37.22307123460482
-                    ],
-                    [
-                        -80.42272866626087,
-                        37.22308135418898
-                    ],
-                    [
-                        -80.42270213546932,
-                        37.22301864706143
-                    ]
-                ]
-            ]
-        },
-        "details": {
-            "Closure Start Date": "2026-07-20 06:00:00",
-            "Closure End Date": "2026-10-01 17:00:00",
-            "COMMENTS": "Virginia Tech Hokie Stone Crew will be building scaffold on the north side of the Smith Career Center in a small parking lot closest to the building. The parking spaces against the building will be closed, but access to adjoining lots will be open.",
+            "Closure Start Date": "2026-09-14 07:00:00",
+            "Closure End Date": "2026-10-09 19:00:00",
+            "COMMENTS": "There will be contractors grading, milling and paving a new ADA parking spot and ADA path.  This will temporarily affect the normal driving path to the fuel center.",
             "More Information": null
         }
     },
@@ -1696,52 +1554,144 @@
         }
     },
     {
-        "id": 20195,
-        "name": "Fleet Services ADA Parking and Pathway",
+        "id": 20367,
+        "name": "McComas Pool AHU Replacement",
         "type": "Scheduled",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
                 [
                     [
-                        -80.4140973810447,
-                        37.218923027974654
+                        -80.42300582617268,
+                        37.22044019957928
                     ],
                     [
-                        -80.4141484817301,
-                        37.21904863450115
+                        -80.42282651441658,
+                        37.220443065014074
                     ],
                     [
-                        -80.41431220201811,
-                        37.21900418140837
+                        -80.42281310604348,
+                        37.220015653878875
                     ],
                     [
-                        -80.41433442374803,
-                        37.2190501314939
+                        -80.42299933203877,
+                        37.220010886751595
                     ],
                     [
-                        -80.41410912892053,
-                        37.21912050723044
-                    ],
-                    [
-                        -80.41406444449927,
-                        37.21903376080051
-                    ],
-                    [
-                        -80.41402709742836,
-                        37.21894526134434
-                    ],
-                    [
-                        -80.4140973810447,
-                        37.218923027974654
+                        -80.42300582617268,
+                        37.22044019957928
                     ]
                 ]
             ]
         },
         "details": {
-            "Closure Start Date": "2026-09-14 07:00:00",
-            "Closure End Date": "2026-10-09 19:00:00",
-            "COMMENTS": "There will be contractors grading, milling and paving a new ADA parking spot and ADA path.  This will temporarily affect the normal driving path to the fuel center.",
+            "Closure Start Date": "2026-10-09 06:00:00",
+            "Closure End Date": "2026-10-09 20:00:00",
+            "COMMENTS": "The parking area between McComas and the greenhouses will be closed to allow for the replacement of the AHU on the roof. The McComas pool will also be closed.",
+            "More Information": null
+        }
+    },
+    {
+        "id": 20370,
+        "name": "Torgersen Hall Loading Dock",
+        "type": "Scheduled",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -80.4207409497647,
+                        37.230346428804296
+                    ],
+                    [
+                        -80.42062906457238,
+                        37.230411631821454
+                    ],
+                    [
+                        -80.42049547299735,
+                        37.23029731750039
+                    ],
+                    [
+                        -80.42066098631138,
+                        37.2302010076987
+                    ],
+                    [
+                        -80.4207409497647,
+                        37.230346428804296
+                    ]
+                ]
+            ]
+        },
+        "details": {
+            "Closure Start Date": "2026-10-10 06:00:00",
+            "Closure End Date": "2026-10-11 19:00:00",
+            "COMMENTS": "As part of the ongoing roof replacement project, a rock removal truck will be placed to the west of the bridge and in the loading dock. Occupants may notice a contractor’s presence and hear excessive construction noise associated with the work.",
+            "More Information": null
+        }
+    },
+    {
+        "id": 20371,
+        "name": "Torgersen Hall Loading Dock Crane",
+        "type": "Scheduled",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -80.42090430490828,
+                        37.23045169185492
+                    ],
+                    [
+                        -80.420807727182,
+                        37.230360759542116
+                    ],
+                    [
+                        -80.42076227743745,
+                        37.23034265510586
+                    ],
+                    [
+                        -80.42062906457238,
+                        37.230411631821454
+                    ],
+                    [
+                        -80.42049547299735,
+                        37.23029731750039
+                    ],
+                    [
+                        -80.42061490700019,
+                        37.23022814241807
+                    ],
+                    [
+                        -80.4206735054011,
+                        37.23029375217862
+                    ],
+                    [
+                        -80.42071806066252,
+                        37.2302860107564
+                    ],
+                    [
+                        -80.42076700208317,
+                        37.23027819794806
+                    ],
+                    [
+                        -80.42082951141553,
+                        37.23028630267509
+                    ],
+                    [
+                        -80.42093946088511,
+                        37.23043234519287
+                    ],
+                    [
+                        -80.42090430490828,
+                        37.23045169185492
+                    ]
+                ]
+            ]
+        },
+        "details": {
+            "Closure Start Date": "2026-10-12 06:00:00",
+            "Closure End Date": "2026-10-12 20:00:00",
+            "COMMENTS": "As part of the ongoing roof replacement project, a crane will be positioned at the loading dock to lift materials to and from the roof. As a result, the loading dock will be closed for the duration of the work. Occupants may experience a contractor’s presence and hear general construction noise associated with the work.",
             "More Information": null
         }
     }
