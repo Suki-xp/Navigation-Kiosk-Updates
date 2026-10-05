@@ -6,11 +6,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from peft import PeftModel
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-# Load .env.local from the project root so HF_TOKEN is available
-env_path = os.path.join(os.path.dirname(__file__), "..", ".env.local")
-load_dotenv(env_path)
+#Load .env.local from the project root so HF_TOKEN is available
+load_dotenv(find_dotenv(".env.local"))
 
 HAS_CUDA = torch.cuda.is_available()
 
