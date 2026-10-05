@@ -1,5 +1,6 @@
 import os
 import torch
+import uvicorn
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -151,3 +152,6 @@ async def get_directions(request: DirectionRequest):
 
     except Exception as e:
         return DirectionResponse(success=False, error=str(e))
+
+if __name__ == "__main__":
+    uvicorn.run("serverLLM:app", host="127.0.0.1", port=8000, reload=True)
